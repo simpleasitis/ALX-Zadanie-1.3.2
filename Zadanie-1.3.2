@@ -1,0 +1,42 @@
+package MB_zadania_domowe_1;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Zadanie131 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("W którym dniu tygodnia oddałeś buty do naprawy? (Liczba od 1 do 7)");
+		int oddano= sc.nextInt();
+		
+		System.out.println("Ile dni będzie trwała naprawa?");
+		int czasNaparawy= sc.nextInt();
+
+		int doOdbioru = (oddano + czasNaparawy);
+
+		while (doOdbioru > 7) {
+			doOdbioru = doOdbioru - 7;
+		}
+		
+		String dzienSlownie = zamianaNaSlowo (doOdbioru);
+			System.out.println("Mozesz odebrać buty od szewca " + doOdbioru + "-ego dnia tygodnia.");
+			
+
+		String zamianaNaSlowo (int doOdbioru) {
+				switch(doOdbioru) {
+					case 1: return "poniedziałek";
+					case 2: return "wtorek";
+					case 3: return "środa";
+					case 4: return "czwartek";
+					case 5: return "piątek";
+					case 6: return "sobota";
+					case 7: return "niedziela";
+				}
+			}
+		
+		sc.close();
+	}
+}
